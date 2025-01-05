@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma"
+}
+
+model Booking {
+  id        String   @id @default(cuid())
+  date      DateTime
+  time      String
+  guests    Int
+  name      String
+  email     String
+  phone     String
+  userId    String?
+  createdAt DateTime @default(now())
+  status    String   @default("confirmed")
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id       String    @id @default(cuid())
+  email    String    @unique
+  password String
+  role     String    @default("user")
+  bookings Booking[]
+}
