@@ -25,6 +25,12 @@ export const BookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.date || !formData.time || !formData.guests) {
+      alert("Please fill all fields");
+      return;
+    }
+
     console.log("Booking Submitted:", formData);
     // Add your API call logic here
   };

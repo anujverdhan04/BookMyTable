@@ -8,24 +8,24 @@ export const BookingManagement = () => {
   ];
 
   return (
-    <div>
-      <h2>Booking Management</h2>
-      <table>
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-4">Booking Management</h2>
+      <table className="w-full table-auto border-collapse border border-gray-300">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Guests</th>
+          <tr className="bg-gray-100">
+            <th className="py-2 px-4 text-left">Name</th>
+            <th className="py-2 px-4 text-left">Date</th>
+            <th className="py-2 px-4 text-left">Time</th>
+            <th className="py-2 px-4 text-left">Guests</th>
           </tr>
         </thead>
         <tbody>
           {bookings.map((booking) => (
-            <tr key={booking.id}>
-              <td>{booking.name}</td>
-              <td>{booking.date}</td>
-              <td>{booking.time}</td>
-              <td>{booking.guests}</td>
+            <tr key={booking.id} className="border-b hover:bg-gray-50">
+              <td className="py-2 px-4">{booking.name}</td>
+              <td className="py-2 px-4">{booking.date}</td>
+              <td className="py-2 px-4">{booking.time}</td>
+              <td className="py-2 px-4">{booking.guests}</td>
             </tr>
           ))}
         </tbody>
