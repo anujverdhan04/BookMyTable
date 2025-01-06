@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // Ensure base URL is root of the project
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"] // This allows the alias `@` to point to `src` directory
     }
   },
   "include": [
-    "src/**/*",
+    "src/**/*", // Include all files in the `src` folder
     "next-env.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules" // Exclude `node_modules` folder
   ]
 }
